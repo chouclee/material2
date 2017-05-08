@@ -24,7 +24,13 @@ elif is_payload; then
 elif is_closure_compiler; then
   ./scripts/closure-compiler/build-devapp-bundle.sh
 else
-  $(npm bin)/gulp ci:test
+  echo "diff files:"
+  for filename in $(git diff --name-only $TRAVIS_BRANCH...HEAD); do
+    if [ $filename != "*.md" ]; then
+      $(npm bin)/gulp ci:test
+      break
+    fi
+  done
 fi
 
 # Upload coverage results if those are present.
