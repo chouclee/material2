@@ -38,7 +38,8 @@ if (!isForce) {
 
 const config = {
   preset: 'angular',
-  releaseCount: isForce ? 0 : 1
+  releaseCount: isForce ? 0 : 1,
+  useless: 1
 };
 
 const context = {
