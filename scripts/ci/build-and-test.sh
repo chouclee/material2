@@ -26,7 +26,7 @@ elif is_closure_compiler; then
 else
   echo "diff files:"
   for filename in $(git diff --name-only $TRAVIS_BRANCH...HEAD); do
-    if [ $filename != "*.md" ]; then
+    if ! [[ "$filename" =~ .*\.md ]]; then
       $(npm bin)/gulp ci:test
       break
     fi
