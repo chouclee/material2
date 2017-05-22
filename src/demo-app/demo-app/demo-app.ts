@@ -17,6 +17,7 @@ export class Home {}
   styleUrls: ['demo-app.css'],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class DemoApp {
   navItems = [
     {name: 'Autocomplete', route: 'autocomplete'},
