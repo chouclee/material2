@@ -11,7 +11,7 @@ source scripts/ci/sources/mode.sh
 source scripts/ci/sources/tunnel.sh
 
 # Get commit diff
-if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then 
+if [[ "$TRAVIS_PULL_REQUEST" = "false" ]]; then 
   echo $TRAVIS_COMMIT_RANGE
   diff=$(git diff --name-only $TRAVIS_COMMIT_RANGE)
 else
